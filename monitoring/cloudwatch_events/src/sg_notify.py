@@ -8,7 +8,7 @@ APPLICABLE_APIS = ["AuthorizeSecurityGroupIngress", "RevokeSecurityGroupIngress"
 # send email
 def send_notification_email(event):
   rcpt_to = os.getenv('RCPT_TO') or ''
-  mail_from = os.getenv('MAIL_FROM') or 'mamaenko@hp.com'
+  mail_from = os.getenv('MAIL_FROM') or 'user@example.com'
   client = boto3.client('ses', region_name='us-east-1')
   response = client.send_email(
      Destination={
